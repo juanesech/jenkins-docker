@@ -1,0 +1,11 @@
+version: '2'
+services:
+  jenkins:
+    build: .
+    image: juanesech/jenkins-docker:8
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - "/home/juanes/Projects/jenkins/jenkins_home_bk:/var/jenkins_home"
+      - "/var/run/docker.sock:/var/run/docker.sock"
